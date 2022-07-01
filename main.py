@@ -15,6 +15,36 @@ speaker.setProperty('rate',180)   ## how fast you want your assistant to talk
 
 Shopping_list = ['parfum', 'Cafe', "pomme" ]
 
+def search_item():
+    global recognizer
+    speaker.say("Quel article voulez-vous rechercher?")
+    speaker.runAndWait()
+    done=False
+
+    while not done:
+        try:
+
+            with speech_recognition.Microphone() as mic:
+                recognizer.adjust_for_ambient_noise(mic, duration=0.2)
+                audio = recognizer.listen(mic)
+
+                product = recognizer.recognize_google(audio, language="fr-FR")
+                product = product.lower()
+
+                url = 'https://herboristerie-principale.ma/?s='+ product +'&page=search&post_type=product'
+                done = True
+
+                
+
+        except speech_recognition.UnKnownValueError:
+            recognizer = speech_recognition.Recognizer()
+            speaker.say("je n'ai pas compris! Veuillez réessayer!")
+            speaker.runAndWait()
+
+
+    
+
+
 def create_shopping_list():
     global recognizer
 
@@ -108,7 +138,8 @@ mappings ={
     "create_shopping_list": create_shopping_list,
     "add_item_shopping_list":add_item_shopping_list,
     "show_Shopping_list":show_Shopping_list,
-    "exit":quit
+    "exit":quit,
+    "search_item":search_item
 }
 
 
