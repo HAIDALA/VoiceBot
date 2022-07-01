@@ -1,18 +1,19 @@
 {"intents":
 [
     {"tag":"greeting",
-     "patterns": ["Hey", "Hello", "What's up?", "How is it going?", "Hi", "Good day"],
-     "responses": ["Hello Sir!", "hello, what can I do for you?"]},
-    {"tag":"show_shopping_list",
-    "patterns": ["show my shopping list", "can I see my shoupping list?"],
-    "responses": ["OK!"]},
-    {"tag":"add_item_to_my_shopping_list",
-    "patterns": ["Bye", "Stop", "Quit", "I want to exit","I have to go"],
+     "patterns": ["Bonjour", "Salut"],
+     "responses": [""]},
+    {"tag":"create_shopping_list",
+    "patterns": ["créer ma lise"],
+    "responses": [""]},
+    {"tag":"add_item_shopping_list",
+    "patterns": ["Ajouter une liste"],
+    "responses": [""]},
+    {"tag":"show_Shopping_list",
+    "patterns": ["Monter ma liste"],
     "responses": [""]},
     {"tag":"exit",
-    "patterns": ["Bye", "Stop", "Quit", "I want to exit","I have to go"],
+    "patterns": ["arrêt","au revoir", "Stop", "Quitter", "je veux sortir","je dois partir"],
     "responses": [""]}
-    
-    
 
 ]}
