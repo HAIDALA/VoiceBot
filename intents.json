@@ -12,8 +12,13 @@
     {"tag":"show_Shopping_list",
     "patterns": ["Monter ma liste"],
     "responses": [""]},
+    {"tag":"search_item",
+    "patterns" :["recherche"],
+    "responses": [""]},
     {"tag":"exit",
     "patterns": ["arrêt","au revoir", "Stop", "Quitter", "je veux sortir","je dois partir"],
     "responses": [""]}
+    
+    
 
 ]}
