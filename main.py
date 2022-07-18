@@ -21,6 +21,7 @@ def search_item():
     speaker.say("Quel article voulez-vous rechercher?")
     speaker.runAndWait()
     done=False
+    
 
     while not done:
         try:
@@ -34,14 +35,19 @@ def search_item():
 
                 url = 'https://herboristerie-principale.ma/?s='+ product +'&page=search&post_type=product'
                 webbrowser.get().open(url)
+                speaker.say("voici ce que j'ai trouvé")
+                speaker.runAndWait()
                 done = True
+                break
+                
 
                 
 
-        except speech_recognition.UnKnownValueError:
+        except :
             recognizer = speech_recognition.Recognizer()
-            speaker.say("je n'ai pas compris! Veuillez réessayer!")
+            speaker.say("je n'ai pas compris")
             speaker.runAndWait()
+            
 
 
     
@@ -153,7 +159,7 @@ assistant.train_model()
 
 while True:
 
-    try:
+    
 
         with speech_recognition.Microphone() as mic:
            
@@ -166,19 +172,7 @@ while True:
         assistant.request(message)
         
     
-    except speech_recognition.UnKnownValueError:
-        recognizer = speech_recognition.Recognizer() 
-        speaker.say("je n'ai pas compris! Veuillez réessayer!")
-        speaker.runAndWait()
-
-
-
-    
-
-        
-
-
-
-
-
-
+    # except :
+    #     recognizer = speech_recognition.Recognizer() 
+    #     speaker.say("je n'ai pas compris! Veuillez réessayer!")
+    #     speaker.runAndWait()
