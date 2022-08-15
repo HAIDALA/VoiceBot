@@ -1,24 +1,30 @@
 {"intents":
 [
     {"tag":"greeting",
-     "patterns": ["Bonjour", "Salut"],
-     "responses": [""]},
-    {"tag":"create_shopping_list",
-    "patterns": ["créer ma lise"],
-    "responses": [""]},
+     "patterns":["Bonjour", "Salut"],
+     "responses":[]},
+    {"tag":"create_note",
+    "patterns": ["please create a new note", "New note","Create a note", "I want to create a note"],
+    "responses":[""]},
     {"tag":"add_item_shopping_list",
-    "patterns": ["Ajouter une liste"],
-    "responses": [""]},
+      "patterns":["Ajouter un article","ajouter","article"],
+      "responses":[""]},
     {"tag":"show_Shopping_list",
-    "patterns": ["Monter ma liste"],
-    "responses": [""]},
+      "patterns":["Monter ma liste","ma liste"],
+      "responses":[""]},
     {"tag":"search_item",
-    "patterns" :["recherche"],
+    "patterns":["recherche","rechercher"],
+    "responses":[""]},
+    {"tag":"create_complaint",
+    "patterns": ["faire une réclamation","J'ai un probleme"],
+    "responses": [""]},
+    {"tag":"Commande_livré",
+    "patterns": [""],
+    "responses": [""]},
+    {"tag":"order_status",
+    "patterns": ["etat de ma commande"],
     "responses": [""]},
     {"tag":"exit",
-    "patterns": ["arrêt","au revoir", "Stop", "Quitter", "je veux sortir","je dois partir"],
-    "responses": [""]}
-    
-    
-
+      "patterns":["arrêt","au revoir", "Stop", "Quitter"],
+      "responses":[""]}
 ]}
